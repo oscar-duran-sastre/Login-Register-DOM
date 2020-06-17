@@ -12,15 +12,92 @@
     <link rel="stylesheet" href="style.css">
     <title>Manipulando el DOM: Login y register.</title>
 </head>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-
-        </div>
-    </div>
-</div>
 
 <body>
+    <div class="container-fluid">
+        <!-- login -->
+        <div class="row">
+            <div class="offset-3 col-6">
+                <div class="cardLogin p-5">
+                    <form id="loginForm">
+                        <span>Accede con tus credenciales.</span>
+                        <div class=col>
+                            <label for="email"><b>Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                                id="emailLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="password"><b>Contraseña</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="password" placeholder="Introduce tu password"
+                                name="password" id="passwordLogin" required>
+                        </div>
+                        <div class="col justify-content-center mt-3">
+                            <button class="btn btn-primary btn-lg buttonLogin" id="buttonLogin" href="" role="button"
+                                type="submit">Acceder</button>
+                        </div>
+                        <div id="resultCheckLogin"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END login -->
+
+        <!-- register -->
+        <div class="row">
+            <div class="offset-3 col-6">
+                <div class="cardLogin p-5">
+                    <form id="loginRegister">
+                        <span>Introduce tus datos.</span>
+                        <div class=col>
+                            <label for="name"><b>Nombre</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                                id="emailLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="surname"><b>Apellidos</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                                id="emailLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="email"><b>Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                                id="emailLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="email"><b>Repetir Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                                id="emailLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="password"><b>Contraseña</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="password" placeholder="Introduce tu password"
+                                name="password" id="passwordLogin" required>
+                        </div>
+                        <div class=col>
+                            <label for="password"><b>Repetir Contraseña</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="password" placeholder="Introduce tu password"
+                                name="password" id="passwordLogin" required>
+                        </div>
+                        <div class="col justify-content-center mt-3">
+                            <button class="btn btn-primary btn-lg buttonLogin" id="buttonLogin" href="" role="button"
+                                type="submit">Regístrate</button>
+                        </div>
+                        <div id="resultCheckLogin"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END register -->
+
+    </div>
 
     <script src="script.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>

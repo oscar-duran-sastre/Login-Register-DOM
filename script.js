@@ -1,3 +1,6 @@
+
+import { store } from './store.js';
+
 /* Crea las siguientes funciones para simular un sistema de
 autentificación:
 const users = [‘cgonzalez@hubescuela.com’, ‘test@test.com’ ];
@@ -8,6 +11,33 @@ Debe retornar el nombre del usuario en caso de que el email
 que recibimos como parámetros se encuentra en el array de
 usuarios. Si no lo encuentra retorna el mensaje “usuario no
 encontrado”. */
+
+const loginForm = document.querySelector('#loginForm');
+
+const loginEventSubmit = () => {
+    loginForm.addEventListener('submit', event => {
+        event.preventDefault();
+        const userEmail = document.querySelector('#emailLogin');
+        const userPassword = document.querySelector('#passwordLogin');
+        const checkEmailResult = checkEmail(userEmail.value);
+        const checkPasswordResult = checkPassword(userPassword.value);
+        return resultLogin(checkEmailResult, checkPasswordResult);
+    })
+}
+
+const checkEmail = email => store.find((value) => value.email === email);
+
+const checkPassword = password => store.find((value) => value.password === password);
+
+const resultLogin = ((email, password) => {
+    const resultCheckLogin = document.querySelector('#resultCheckLogin');
+    resultCheckLogin.innerHTML = ' ';
+    email === undefined || password === undefined
+        ? resultCheckLogin.insertAdjacentHTML('beforeend', '<span class="resultLoginFalse">¡No puedes pasar!</span>')
+        : resultCheckLogin.insertAdjacentHTML('beforeend', '<span class="resultLoginTrue">Puedes pasar</span>')
+});
+
+loginEventSubmit();
 
 /* Register recibe 6 parámetros:
 - nombre
