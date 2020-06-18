@@ -24,7 +24,7 @@
                         <div class=col>
                             <label for="email"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
+                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
                                 id="emailLogin" required>
                         </div>
                         <div class=col>
@@ -48,54 +48,127 @@
         <div class="row">
             <div class="offset-3 col-6">
                 <div class="cardLogin p-5">
-                    <form id="loginRegister">
+                    <form id="registerForm">
                         <span>Introduce tus datos.</span>
                         <div class=col>
                             <label for="name"><b>Nombre</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
-                                id="emailLogin" required>
+                            <input class="loginForms" type="text" placeholder="Introduce tu nombre" name="email"
+                                id="firstNameRegister" required>
                         </div>
                         <div class=col>
-                            <label for="surname"><b>Apellidos</b></label>
+                            <label for="surname"><b>Apellido</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
-                                id="emailLogin" required>
+                            <input class="loginForms" type="text" placeholder="Introduce tu primer apellido"
+                                name="email" id="lastNameRegister" required>
                         </div>
                         <div class=col>
                             <label for="email"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
-                                id="emailLogin" required>
+                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
+                                id="emailRegister" required>
                         </div>
                         <div class=col>
                             <label for="email"><b>Repetir Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu email" name="email"
-                                id="emailLogin" required>
+                            <input class="loginForms" type="email" placeholder="Repite tu email" name="email"
+                                id="emailRegisterRepit" required>
                         </div>
                         <div class=col>
                             <label for="password"><b>Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="password" placeholder="Introduce tu password"
-                                name="password" id="passwordLogin" required>
+                            <input class="loginForms" type="password" placeholder="Introduce tu contraseña"
+                                name="password" id="passwordRegister" required>
                         </div>
                         <div class=col>
                             <label for="password"><b>Repetir Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="password" placeholder="Introduce tu password"
-                                name="password" id="passwordLogin" required>
+                            <input class="loginForms" type="password" placeholder="Repite tu contraseña" name="password"
+                                id="passwordRegisterRepit" required>
                         </div>
+                        <div class=col>
+                            <label for="age"><b>Edad</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="text" placeholder="Introduce tu edad" name="age"
+                                id="ageRegister" required>
+                        </div>
+                        <!-- <div class="col">
+                            <span class="sexSelectorRegister" data-type="selectors">
+                                <label for="inLineRadioOptions"><span class="birthdayLabelRegister">Sexo</span></label>
+                                <div class="form-check form-check-inline col-12 ml-1">
+                                    <input class="form-check-input " type="radio" name="inlineRadioOptions"
+                                        id="sexFemaleRegister" value="female" required>
+                                    <label class="form-check-label" for="inlineRadio1">Mujer</label>
+                                </div>
+                                <div class="form-check form-check-inline col-12 ml-1">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="sexMaleRegister" value="male">
+                                    <label class="form-check-label" for="inlineRadio2">Hombre</label>
+                                </div>
+                            </span>
+                        </div> -->
                         <div class="col justify-content-center mt-3">
-                            <button class="btn btn-primary btn-lg buttonLogin" id="buttonLogin" href="" role="button"
-                                type="submit">Regístrate</button>
+                            <button class="btn btn-success btn-lg buttonRegister" id="buttonRegister" href=""
+                                role="button" type="submit">Registrarse</button>
                         </div>
-                        <div id="resultCheckLogin"></div>
+                        <div id="resultCheckRegister"></div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- END register -->
+
+        <!-- delete user -->
+        <div class="row">
+            <div class="offset-3 col-6">
+                <div class="cardLogin p-5">
+                    <form id="deleteForm">
+                        <span>Elimina tu usuario.</span>
+                        <div class=col>
+                            <label for="email"><b>Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
+                                id="emailDelete" required>
+                        </div>
+                        <div class=col>
+                            <label for="email"><b>Repetir email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="email" placeholder="Repite tu email" name="email"
+                                id="emailDeleteRepit" required>
+                        </div>
+                        <div class="col justify-content-center mt-3">
+                            <button class="btn btn-danger btn-lg buttonLogin" id="buttonDelete" href="" role="button"
+                                type="submit">Eliminar usuario</button>
+                        </div>
+                        <div id="resultCheckDelete"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END delete user -->
+
+        <!-- reset password -->
+        <div class="row">
+            <div class="offset-3 col-6">
+                <div class="cardLogin p-5">
+                    <form id="resetPasswordForm">
+                        <span>Recupera tu contraseña.</span>
+                        <div class=col>
+                            <label for="email"><b>Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
+                                id="emailResetPassword" required>
+                        </div>
+                        <div class="col justify-content-center mt-3">
+                            <button class="btn btn-info btn-lg buttonLogin" id="buttonResetPassword" href=""
+                                role="button" type="submit">Recuperar contraseña.</button>
+                        </div>
+                        <div id="resultResetPassword"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END reset password -->
 
     </div>
 
