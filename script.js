@@ -1,16 +1,11 @@
 
 import { store, deletedUsers } from './store.js';
+import { emailExistsInArray } from './check-email-exists.js';
+import { sumAgesListener } from './sum-ages.js'
 
-/* Crea las siguientes funciones para simular un sistema de
-autentificación:
-const users = [‘cgonzalez@hubescuela.com’, ‘test@test.com’ ];
-login: recibe dos parámetros
-- email
-- password
-Debe retornar el nombre del usuario en caso de que el email
-que recibimos como parámetros se encuentra en el array de
-usuarios. Si no lo encuentra retorna el mensaje “usuario no
-encontrado”. */
+/* Login */
+
+sumAgesListener();
 
 const loginForm = document.querySelector('#loginForm');
 
@@ -39,19 +34,7 @@ const resultLogin = ((email, password) => {
 
 loginEventSubmit();
 
-/* Register recibe 6 parámetros:
-- nombre
-- apellidos
-- email
-- contraseña
-- contraseña2
-- edad
-Antes de añadir el email al array de users, comprueba que ese
-email no existe en el array. Además debe comprobar que la edad
-sea mayor de 18 y que las dos contraseñas coinciden.En caso de
-no existir lo añadimos al principio del array ( por ahora
-solamente el email ). Sí el usuario existe retornamos “El usuario
-ya existe en la base de datos”. */
+/* Register */
 
 const registerForm = document.querySelector('#registerForm');
 
@@ -70,11 +53,11 @@ const registerEventSubmit = () => {
     const checkEmailMatchResult = checkEmailMatch(userEmailRegister.value, userEmailRegisterRepit.value);
     const checkPasswordMatchResult = checkPasswordMatch(userPasswordRegister.value, userPasswordRegisterRepit.value);
     const checkAgeOver18Result = checkAgeOver18(userAgeRegister.value);
-    const checkEmailExitsInArrayResult = checkEmailExitsInArray(userEmailRegister.value);
+    const checkEmailExistInArrayResult = checkEmailExistInArray(userEmailRegister.value);
 
-    checkRegisterIsOK(checkEmailMatchResult, checkPasswordMatchResult, checkAgeOver18Result, checkEmailExitsInArrayResult);
+    checkRegisterIsOK(checkEmailMatchResult, checkPasswordMatchResult, checkAgeOver18Result, checkEmailExistInArrayResult);
 
-    if (checkEmailMatchResult && checkPasswordMatchResult && checkAgeOver18Result && checkEmailExitsInArrayResult === undefined) {
+    if (checkEmailMatchResult && checkPasswordMatchResult && checkAgeOver18Result && checkEmailExistInArrayResult === undefined) {
       register(userEmailRegister.value, userPasswordRegister.value, userFirstNameRegister.value, userLastNameRegister.value, userAgeRegister.value);
     }
   });
@@ -86,7 +69,7 @@ const checkPasswordMatch = ((password1, password2) => password1 === password2);
 
 const checkAgeOver18 = (age => age >= 18);
 
-const checkEmailExitsInArray = email => store.find((value) => value.email === email);
+const checkEmailExistInArray = email => store.find((value) => value.email === email);
 
 const checkRegisterIsOK = ((email, password, age, emailInArray) => {
   resultCheckRegister.innerHTML = ' ';
@@ -115,10 +98,7 @@ const register = (email, password, name, surname, age) => store.push(
 
 registerEventSubmit();
 
-/* deleteUser recibe 1 parámetro:
-- email
-Debe eliminar el usuario del array users y guardalo en el array
-deletedUsers. Para eliminarlo comprobamos que el usuario existe. */
+/* Delete User */
 
 const deleteForm = document.querySelector('#deleteForm');
 
@@ -141,8 +121,6 @@ const checkEmailsMatch = () => {
 }
 
 const emailsMatch = ((email1, email2) => email1 === email2);
-
-const emailExistsInArray = email => store.findIndex((value) => value.email === email);
 
 const deleteUser = (index => {
   const deletedUser = store.splice(index, 1);
@@ -168,11 +146,7 @@ const messagesDeleteForm = ((email, emailExists) => {
 
 checkEmailsMatch();
 
-/* Generar la función reset password. Recibe un parámetro ( email ) y retorna una url del tipo
-“https://resetpassword.com/” que incluya el email en minúsculas y sustituyendo la arroba y el punto por
-un guión medio.
-ej:
-https://resetpassword.com/email-prueba-com . */
+/* Reset Password */
 
 const resetPasswordForm = document.querySelector('#resetPasswordForm');
 
@@ -203,44 +177,50 @@ const printResetPasswordResult = (email, emailModified) => {
     return resultResetPassword.insertAdjacentHTML('beforeEnd',
       `<span class=resultLoginTrue>https://resetpassword.com/${emailModified}</span>`);
   }
-  return resultResetPassword.insertAdjacentHTML('beforeend',
-    '<span class=resultLoginFalse>Este email no existe en nuestra base de datos.</span>')
+  return store.forEach(
+    resultResetPassword.insertAdjacentHTML('beforeend',
+      '<span class=resultLoginFalse>Este email no existe en nuestra base de datos.</span>'))
 }
 
 resetPassword();
 
-/* Dashboard:
-Generar una función que liste los usuarios existentes en el array
-users. Para ello utiliza una callback que sí el usuario está en
-la última posición del array, muestre el texto “ Pendiente de
-activar ”. */
+/* List Users */
 
-const header = document.querySelector('#header');
+const listUsersForm = document.querySelector('#listUsers');
 
-const listUsers = email => {
+const listUsersChecks = () => {
+  listUsersForm.addEventListener('submit', event => {
+    event.preventDefault();
+    // const emailInputListUsers = document.querySelector('#emailListUsers');
+    // const emailExistsInArrayResult = emailExistsInArray(emailInputListUsers.value);
+    // if (emailExistsInArrayResult === -1) {
+    //   return wrongEmail()
+    // }
+    return listUsers();
+  });
+};
 
-}
+const resultListUsers = document.querySelector('#resultListUsers');
 
-/* Dashboard:
-Generar una función que calcule la suma de la edad total de los
-usuarios registrados. */
-
-/* toogle card */
-
-// const header = document.querySelector('#header');
-
-// const headerEventListener = () => {
-//     header.addEventListener('submit', event => {
-//         event.preventDefault();
-//         const userEmail = document.querySelector('#headerLinkLogin');
-//         const userPassword = document.querySelector('#headerLinkRegister');
-//         const userPassword = document.querySelector('#headerLinkDeleteUser');
-//         const userPassword = document.querySelector('#headerLinkPasswordRecovery');
-//         const userPassword = document.querySelector('#headerLinkUsersList');
-//         const checkEmailResult = checkEmail(userEmail.value);
-//         const checkPasswordResult = checkPassword(userPassword.value);
-//         return resultLogin(checkEmailResult, checkPasswordResult);
-//       });
+// const wrongEmail = () => {
+//   resultListUsers.innerHTML = ' ';
+//   resultListUsers.insertAdjacentHTML('beforeEnd',
+//     `<span class=resultLoginFalse>Este email no existe en nuestra base de datos.</span>`);
 // }
 
-// headerEventListener();
+const listUsers = (() => {
+  resultListUsers.innerHTML = ' ';
+  store.forEach((value) => {
+    resultListUsers.insertAdjacentHTML('beforeEnd',
+      `<ul class="navbar-nav resultLoginTrue">
+        <li class="nav-item">${value.id}</li>
+        <li class="nav-item">${value.email}</li>
+        <li class="nav-item">${value.password}</li>
+        <li class="nav-item">${value.name}</li>
+        <li class="nav-item">${value.surname}</li>
+        <li class="nav-item">${value.age}</li>
+      </ul>`)
+  })
+});
+
+listUsersChecks();
