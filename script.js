@@ -215,6 +215,32 @@ users. Para ello utiliza una callback que sí el usuario está en
 la última posición del array, muestre el texto “ Pendiente de
 activar ”. */
 
+const header = document.querySelector('#header');
+
+const listUsers = email => {
+
+}
+
 /* Dashboard:
 Generar una función que calcule la suma de la edad total de los
 usuarios registrados. */
+
+/* toogle card */
+
+// const header = document.querySelector('#header');
+
+// const headerEventListener = () => {
+//     header.addEventListener('submit', event => {
+//         event.preventDefault();
+//         const userEmail = document.querySelector('#headerLinkLogin');
+//         const userPassword = document.querySelector('#headerLinkRegister');
+//         const userPassword = document.querySelector('#headerLinkDeleteUser');
+//         const userPassword = document.querySelector('#headerLinkPasswordRecovery');
+//         const userPassword = document.querySelector('#headerLinkUsersList');
+//         const checkEmailResult = checkEmail(userEmail.value);
+//         const checkPasswordResult = checkPassword(userPassword.value);
+//         return resultLogin(checkEmailResult, checkPasswordResult);
+//       });
+// }
+
+// headerEventListener();

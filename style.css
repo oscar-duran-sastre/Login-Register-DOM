@@ -1,16 +1,18 @@
 
 body {
-    padding-top: 15%;    
+    background-color: lightgrey;
+    padding-top: 150px;
+    padding-bottom: 50px ;    
 }
 
-body, .loginForms {
+.loginForms {
     background-color: #fff;
 }
 
 .cardLogin {
     display: flex;
     background-color: #f8f9fa;
-    /* border-radius: 15px; */
+    border-radius: 5px;
     justify-content: center;
     justify-items: center;
     justify-self: center;
@@ -19,8 +21,9 @@ body, .loginForms {
     align-self: center;
 }
 
-.cardLogin/*, 
-.loginForms*/ {
+.header,
+.cardLogin, 
+.loginForms {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -31,9 +34,14 @@ body, .loginForms {
 }
 
 .resultLoginFalse {
-    color: red;
+    background-color: red;
 }
 
 .resultLoginTrue {
-    color: green;
+    background-color: green;
+}
+
+.resultLoginFalse,
+.resultLoginTrue {
+    color: white;
 }

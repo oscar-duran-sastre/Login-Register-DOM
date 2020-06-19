@@ -15,9 +15,38 @@
 
 <body>
     <div class="container-fluid">
+
+        <!-- header -->
+        <div class="row">
+            <div class="col-12 navbar navbar-expand-md navbar-light bg-light fixed-top header">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    id="toggler-button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1 active"><a class="nav-link" id="headerLinkLogin" href="">Login</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link" id="headerLinkRegister" href="">Registro</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1"><a class="nav-link" id="headerLinkDeleteUser" href="">Eliminar usuario</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link" id="headerLinkPasswordRecovery" href="">Recuperar contraseña</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1 "><a class="nav-link" id="headerLinkUsersList" href="">Listar usuarios</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1 mb-4 mb-md-0"><a class="nav-link" id="headerLinkSumAges" href="">Sumar edades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END header -->
+
         <!-- login -->
         <div class="row">
-            <div class="offset-3 col-6">
+            <div class="col d-flex justify-content-center" id="login">
                 <div class="cardLogin p-5">
                     <form id="loginForm">
                         <span>Accede con tus credenciales.</span>
@@ -34,7 +63,7 @@
                                 name="password" id="passwordLogin" required>
                         </div>
                         <div class="col justify-content-center mt-3">
-                            <button class="btn btn-primary btn-lg buttonLogin" id="buttonLogin" href="" role="button"
+                            <button class="btn btn-primary buttonLogin" id="buttonLogin" href="" role="button"
                                 type="submit">Acceder</button>
                         </div>
                         <div id="resultCheckLogin"></div>
@@ -46,7 +75,7 @@
 
         <!-- register -->
         <div class="row">
-            <div class="offset-3 col-6">
+            <div class="col d-none justify-content-center" id="register">
                 <div class="cardLogin p-5">
                     <form id="registerForm">
                         <span>Introduce tus datos.</span>
@@ -92,23 +121,8 @@
                             <input class="loginForms" type="text" placeholder="Introduce tu edad" name="age"
                                 id="ageRegister" required>
                         </div>
-                        <!-- <div class="col">
-                            <span class="sexSelectorRegister" data-type="selectors">
-                                <label for="inLineRadioOptions"><span class="birthdayLabelRegister">Sexo</span></label>
-                                <div class="form-check form-check-inline col-12 ml-1">
-                                    <input class="form-check-input " type="radio" name="inlineRadioOptions"
-                                        id="sexFemaleRegister" value="female" required>
-                                    <label class="form-check-label" for="inlineRadio1">Mujer</label>
-                                </div>
-                                <div class="form-check form-check-inline col-12 ml-1">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="sexMaleRegister" value="male">
-                                    <label class="form-check-label" for="inlineRadio2">Hombre</label>
-                                </div>
-                            </span>
-                        </div> -->
                         <div class="col justify-content-center mt-3">
-                            <button class="btn btn-success btn-lg buttonRegister" id="buttonRegister" href=""
+                            <button class="btn btn-success buttonRegister" id="buttonRegister" href=""
                                 role="button" type="submit">Registrarse</button>
                         </div>
                         <div id="resultCheckRegister"></div>
@@ -120,7 +134,7 @@
 
         <!-- delete user -->
         <div class="row">
-            <div class="offset-3 col-6">
+            <div class="col d-none justify-content-center" id="deleteUser">
                 <div class="cardLogin p-5">
                     <form id="deleteForm">
                         <span>Elimina tu usuario.</span>
@@ -137,7 +151,7 @@
                                 id="emailDeleteRepit" required>
                         </div>
                         <div class="col justify-content-center mt-3">
-                            <button class="btn btn-danger btn-lg buttonLogin" id="buttonDelete" href="" role="button"
+                            <button class="btn btn-danger buttonLogin" id="buttonDelete" href="" role="button"
                                 type="submit">Eliminar usuario</button>
                         </div>
                         <div id="resultCheckDelete"></div>
@@ -149,7 +163,7 @@
 
         <!-- reset password -->
         <div class="row">
-            <div class="offset-3 col-6">
+            <div class="col d-none justify-content-center" id="resetPassword">
                 <div class="cardLogin p-5">
                     <form id="resetPasswordForm">
                         <span>Recupera tu contraseña.</span>
@@ -160,8 +174,8 @@
                                 id="emailResetPassword" required>
                         </div>
                         <div class="col justify-content-center mt-3">
-                            <button class="btn btn-info btn-lg buttonLogin" id="buttonResetPassword" href=""
-                                role="button" type="submit">Recuperar contraseña.</button>
+                            <button class="btn btn-info buttonLogin" id="buttonResetPassword" href=""
+                                role="button" type="submit">Recuperar contraseña</button>
                         </div>
                         <div id="resultResetPassword"></div>
                     </form>
@@ -169,6 +183,29 @@
             </div>
         </div>
         <!-- END reset password -->
+
+        <!-- list users -->
+        <div class="row">
+            <div class="col d-none justify-content-center" id="listUsers">
+                <div class="cardLogin p-5">
+                    <form id="listUsersForm">
+                        <span>Lista los usuarios.</span>
+                        <div class=col>
+                            <label for="email"><b>Email</b></label>
+                            <div class="w-100"></div>
+                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
+                                id="emailListUsers" required>
+                        </div>
+                        <div class="col justify-content-center mt-3">
+                            <button class="btn btn-warning text-white buttonLogin" id="buttonListUsers" href=""
+                                role="button" type="submit">Listar usuarios</button>
+                        </div>
+                        <div id="resultResetPassword"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END list users -->
 
     </div>
 
