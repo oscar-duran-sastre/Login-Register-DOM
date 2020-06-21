@@ -1,20 +1,12 @@
 
 import { store } from './store.js';
 
-const sumAgesForm = document.querySelector('#headerLinkSumAges');
-
-const sumAgesListener = () => {
-    sumAgesForm.addEventListener('click', event => {
-        event.preventDefault();
-        return showSumAges();
-    });
-}
-
 const showSumAges = (() => {
     const sumAges = store.map(item => item.age).reduce((prev, next) => +prev + +next);
+    const resultSumAges = document.querySelector('#resultSumAges');
     resultSumAges.innerHTML = ' ';
-    resultSumAges.insertAdjacentHTML('beforeEnd',
+    return resultSumAges.insertAdjacentHTML('beforeEnd',
         `<span class="resultSumAges">${sumAges} años</span>`);
 });
 
-export { sumAgesListener };
+export { showSumAges };

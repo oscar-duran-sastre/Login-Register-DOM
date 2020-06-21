@@ -1,30 +1,30 @@
 
-// import { store } from './store.js';
-// import { emailExistsInArray } from './check-email-exists.js';
+import { store } from './store.js';
 
-/* Dashboard:
-Generar una función que liste los usuarios existentes en el array
-users. Para ello utiliza una callback que sí el usuario está en
-la última posición del array, muestre el texto “ Pendiente de
-activar ”. */
+const listUsersForm = document.querySelector('#listUsers');
 
-// const listUsersForm = document.querySelector('#listUsers');
-// console.log(listUsersForm)
+const listUsersChecks = () => {
+    listUsersForm.addEventListener('submit', event => {
+        event.preventDefault();
+        return listUsers();
+    });
+};
 
-// const listUsers = () => {
-//     listUsersForm.addEventListener('submit', event => {
-//         event.preventDefault();
+const resultListUsers = document.querySelector('#resultListUsers');
 
-//         const emailInputlistUsers = document.querySelector('#emailListUsers');
-//         console.log(emailInputlistUsers);
+const listUsers = (() => {
+    resultListUsers.innerHTML = ' ';
+    store.forEach((value) => {
+        resultListUsers.insertAdjacentHTML('beforeEnd',
+            `<ul class="navbar-nav resultUsersList">
+        <li class="nav-item"><span class="listUsersCards">Número de usuario: </span>${value.id}</li>
+        <li class="nav-item"><span class="listUsersCards">Email: </span>${value.email}</li>
+        <li class="nav-item"><span class="listUsersCards">Password: </span>${value.password}</li>
+        <li class="nav-item"><span class="listUsersCards">Nombre: </span>${value.name}</li>
+        <li class="nav-item"><span class="listUsersCards">Apellido: </span>${value.surname}</li>
+        <li class="nav-item"><span class="listUsersCards">Edad: </span>${value.age} años</li>
+      </ul>`)
+    })
+});
 
-//         const emailExistsInArrayResult = emailExitsInArray(emailInputlistUsers);
-//         console.log(emailExistsInArrayResult);
-
-//         return console.log(emailExistsInArrayResult);
-//     });
-// };
-
-// const emailExistsInArray = email => store.findIndex((value) => value.email === email);
-
-// export { listUsersForm };
+export { listUsersChecks };

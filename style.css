@@ -1,24 +1,27 @@
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: lightgrey;
     padding-top: 100px;
-    padding-bottom: 50px ;    
+    padding-bottom: 50px;    
 }
 
-.loginForms {
+.loginForms,
+.resultUsersList {
     background-color: #fff;
+}
+
+.listUsersCards {
+    font-weight: bold;
 }
 
 .cardLogin {
     display: flex;
     background-color: #f8f9fa;
-    border-radius: 5px;
     justify-content: center;
-    justify-items: center;
-    justify-self: center;
     align-items: center;
-    align-content: center;
-    align-self: center;
 }
 
 .header,
@@ -26,15 +29,17 @@ body {
 .loginForms,
 .resultLoginFalse,
 .resultLoginTrue,
+.resultUsersList,
 button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .resultLoginFalse, 
 .resultLoginTrue,
-.resultSumAges {
+.resultSumAges,
+.resultUsersList {
     justify-content: center;
-    border-radius: 5px;
+    align-items: center;
     margin-top: 3rem;
     padding: 5px;
 }
@@ -43,13 +48,19 @@ button {
     background-color: red;
 }
 
-.resultLoginTrue,
-.resultSumAges {
+.resultLoginTrue {
     background-color: green;
 }
 
 .resultLoginFalse,
-.resultLoginTrue,
-.resultSumAges {
+.resultLoginTrue {
     color: white;
+}
+
+.cardLogin,
+.resultLoginFalse, 
+.resultLoginTrue,
+.resultSumAges,
+.resultUsersList {
+    border-radius: 5px;
 }

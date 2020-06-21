@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="normalize.css">
@@ -18,7 +17,8 @@
 
         <!-- header -->
         <div class="row">
-            <div class="col-12 navbar navbar-expand-md navbar-light bg-light fixed-top header">
+            <div class="col navbar navbar-expand-md navbar-light bg-light fixed-top header">
+                <div class="navbar-brand" id="digitalClock"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
                     id="toggler-button">
@@ -36,11 +36,9 @@
                                 id="headerLinkPasswordRecovery" href="">Recuperar contraseña</a></li>
                         <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link"
                                 id="headerLinkUsersList" href="">Listar usuarios</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link"
-                                id="headerLinkSumAges" href="">Sumar edades de los usuarios</a></li>
-                        <li class="nav-item headerCategoriesLanding d-flex align-self-center ml-md-1">
-                            <div id="resultSumAges"></div>
-                        </li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1 active"><span class="nav-link"
+                                id="headerLinkSumAges">Suma de edades de los usuarios:
+                                <span id="resultSumAges"></span></span></li>
                     </ul>
                 </div>
             </div>
@@ -48,24 +46,24 @@
         <!-- END header -->
 
         <!-- login -->
-        <div class="row">
+        <div class="row" id="LoginRow">
             <div class="col d-flex justify-content-center" id="login">
                 <div class="cardLogin p-5">
                     <form id="loginForm">
                         <span>Accede con tus credenciales.</span>
                         <div class=col>
-                            <label for="email"><b>Email</b></label>
+                            <label for="emai"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
-                                id="emailLogin" required>
+                            <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
+                                name="email" id="emailLogin" required>
                         </div>
                         <div class=col>
                             <label for="password"><b>Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="password" placeholder="Introduce tu password"
+                            <input class="form-control loginForms" type="password" placeholder="Introduce tu password"
                                 name="password" id="passwordLogin" required>
                         </div>
-                        <div class="col justify-content-center mt-3">
+                        <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-primary buttonLogin" id="buttonLogin" href="" role="button"
                                 type="submit">Acceder</button>
                         </div>
@@ -77,7 +75,7 @@
         <!-- END login -->
 
         <!-- register -->
-        <div class="row">
+        <div class="row" id="registerRow">
             <div class="col d-flex justify-content-center" id="register">
                 <div class="cardLogin p-5">
                     <form id="registerForm">
@@ -85,46 +83,46 @@
                         <div class=col>
                             <label for="name"><b>Nombre</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu nombre" name="email"
-                                id="firstNameRegister" required>
+                            <input class="form-control loginForms" type="text" placeholder="Introduce tu nombre"
+                                name="email" id="firstNameRegister" required>
                         </div>
                         <div class=col>
                             <label for="surname"><b>Apellido</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu primer apellido"
-                                name="email" id="lastNameRegister" required>
+                            <input class="form-control loginForms" type="text"
+                                placeholder="Introduce tu primer apellido" name="email" id="lastNameRegister" required>
                         </div>
                         <div class=col>
                             <label for="email"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
-                                id="emailRegister" required>
+                            <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
+                                name="email" id="emailRegister" required>
                         </div>
                         <div class=col>
                             <label for="email"><b>Repetir Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Repite tu email" name="email"
-                                id="emailRegisterRepit" required>
+                            <input class="form-control loginForms" type="email" placeholder="Repite tu email"
+                                name="email" id="emailRegisterRepit" required>
                         </div>
                         <div class=col>
                             <label for="password"><b>Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="password" placeholder="Introduce tu contraseña"
+                            <input class="form-control loginForms" type="password" placeholder="Introduce tu contraseña"
                                 name="password" id="passwordRegister" required>
                         </div>
                         <div class=col>
                             <label for="password"><b>Repetir Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="password" placeholder="Repite tu contraseña" name="password"
-                                id="passwordRegisterRepit" required>
+                            <input class="form-control loginForms" type="password" placeholder="Repite tu contraseña"
+                                name="password" id="passwordRegisterRepit" required>
                         </div>
                         <div class=col>
                             <label for="age"><b>Edad</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="text" placeholder="Introduce tu edad" name="age"
-                                id="ageRegister" required>
+                            <input class="form-control loginForms" type="text" placeholder="Introduce tu edad"
+                                name="age" id="ageRegister" required>
                         </div>
-                        <div class="col justify-content-center mt-3">
+                        <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-success buttonRegister" id="buttonRegister" href="" role="button"
                                 type="submit">Registrarse</button>
                         </div>
@@ -136,7 +134,7 @@
         <!-- END register -->
 
         <!-- delete user -->
-        <div class="row">
+        <div class="row" id="deleteUserRow">
             <div class="col d-flex justify-content-center" id="deleteUser">
                 <div class="cardLogin p-5">
                     <form id="deleteForm">
@@ -144,16 +142,16 @@
                         <div class=col>
                             <label for="email"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
-                                id="emailDelete" required>
+                            <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
+                                name="email" id="emailDelete" required>
                         </div>
                         <div class=col>
                             <label for="email"><b>Repetir email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Repite tu email" name="email"
-                                id="emailDeleteRepit" required>
+                            <input class="form-control loginForms" type="email" placeholder="Repite tu email"
+                                name="email" id="emailDeleteRepit" required>
                         </div>
-                        <div class="col justify-content-center mt-3">
+                        <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-danger buttonLogin" id="buttonDelete" href="" role="button"
                                 type="submit">Eliminar usuario</button>
                         </div>
@@ -165,7 +163,7 @@
         <!-- END delete user -->
 
         <!-- reset password -->
-        <div class="row">
+        <div class="row" id="resetPasswordRow">
             <div class="col d-flex justify-content-center" id="resetPassword">
                 <div class="cardLogin p-5">
                     <form id="resetPasswordForm">
@@ -173,10 +171,10 @@
                         <div class=col>
                             <label for="email"><b>Email</b></label>
                             <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
-                                id="emailResetPassword" required>
+                            <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
+                                name="email" id="emailResetPassword" required>
                         </div>
-                        <div class="col justify-content-center mt-3">
+                        <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-info buttonLogin" id="buttonResetPassword" href="" role="button"
                                 type="submit">Recuperar contraseña</button>
                         </div>
@@ -188,18 +186,11 @@
         <!-- END reset password -->
 
         <!-- list users -->
-        <div class="row">
+        <div class="row" id="listUsersRow">
             <div class="col d-flex justify-content-center" id="listUsers">
                 <div class="cardLogin p-5">
                     <form id="listUsersForm">
-                        <!-- <span>Lista los usuarios.</span>
-                        <div class=col>
-                            <label for="email"><b>Email</b></label>
-                            <div class="w-100"></div>
-                            <input class="loginForms" type="email" placeholder="Introduce tu email" name="email"
-                                id="emailListUsers" required>
-                        </div> -->
-                        <div class="col justify-content-center mt-3">
+                        <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-warning text-white buttonLogin" id="buttonListUsers" href=""
                                 role="button" type="submit">Listar usuarios</button>
                         </div>
