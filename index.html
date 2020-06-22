@@ -18,26 +18,26 @@
         <!-- header -->
         <div class="row">
             <div class="col navbar navbar-expand-md navbar-light bg-light fixed-top header">
-                <div class="navbar-brand" id="digitalClock"></div>
+                <div class="navbar-brand d-flex align-self-end align-self-md-center px-2" id="digitalClock"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
                     id="toggler-button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1 active"><a class="nav-link"
-                                id="headerLinkLogin" href="">Login</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link"
-                                id="headerLinkRegister" href="">Registro</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1"><a class="nav-link"
-                                id="headerLinkDeleteUser" href="">Eliminar usuario</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link"
-                                id="headerLinkPasswordRecovery" href="">Recuperar contraseña</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1"><a class="nav-link"
-                                id="headerLinkUsersList" href="">Listar usuarios</a></li>
-                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1 active"><span class="nav-link"
-                                id="headerLinkSumAges">Suma de edades de los usuarios:
+                    <ul class="navbar-nav mr-auto" id="headerLinks">
+                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1">
+                            <a class="nav-link headerLinkLogin" href="">Inicio</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1">
+                            <a class="nav-link headerLinkRegister" href="">Registro</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-4 mt-md-0 ml-md-1">
+                            <a class="nav-link headerLinkDeleteUser" href="">Eliminar usuario</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1">
+                            <a class="nav-link headerLinkPasswordRecovery" href="">Recuperar contraseña</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1">
+                            <a class="nav-link headerLinkUsersList" href="">Listar usuarios</a></li>
+                        <li class="nav-item headerCategoriesLanding mt-3 mt-md-0 ml-md-1 active">
+                            <span class="nav-link headerLinkSumAges">Suma de edades de los usuarios:
                                 <span id="resultSumAges"></span></span></li>
                     </ul>
                 </div>
@@ -46,21 +46,21 @@
         <!-- END header -->
 
         <!-- login -->
-        <div class="row" id="LoginRow">
+        <div class="row loginRow">
             <div class="col d-flex justify-content-center" id="login">
                 <div class="cardLogin p-5">
                     <form id="loginForm">
                         <span>Accede con tus credenciales.</span>
                         <div class=col>
-                            <label for="emai"><b>Email</b></label>
+                            <label class="pt-3" for="email"><b>Email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
                                 name="email" id="emailLogin" required>
                         </div>
                         <div class=col>
-                            <label for="password"><b>Contraseña</b></label>
+                            <label class="pt-3" for="password"><b>Contraseña</b></label>
                             <div class="w-100"></div>
-                            <input class="form-control loginForms" type="password" placeholder="Introduce tu password"
+                            <input class="form-control loginForms" type="password" placeholder="Introduce tu contraseña"
                                 name="password" id="passwordLogin" required>
                         </div>
                         <div class="col d-flex justify-content-center mt-3">
@@ -75,49 +75,49 @@
         <!-- END login -->
 
         <!-- register -->
-        <div class="row" id="registerRow">
+        <div class="row registerRow d-none">
             <div class="col d-flex justify-content-center" id="register">
                 <div class="cardLogin p-5">
                     <form id="registerForm">
                         <span>Introduce tus datos.</span>
                         <div class=col>
-                            <label for="name"><b>Nombre</b></label>
+                            <label class="pt-3" for="name"><b>Nombre</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="text" placeholder="Introduce tu nombre"
                                 name="email" id="firstNameRegister" required>
                         </div>
                         <div class=col>
-                            <label for="surname"><b>Apellido</b></label>
+                            <label class="pt-3" for="surname"><b>Apellido</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="text"
                                 placeholder="Introduce tu primer apellido" name="email" id="lastNameRegister" required>
                         </div>
                         <div class=col>
-                            <label for="email"><b>Email</b></label>
+                            <label class="pt-3" for="email"><b>Email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
                                 name="email" id="emailRegister" required>
                         </div>
                         <div class=col>
-                            <label for="email"><b>Repetir Email</b></label>
+                            <label class="pt-3" for="email"><b>Repetir Email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Repite tu email"
                                 name="email" id="emailRegisterRepit" required>
                         </div>
                         <div class=col>
-                            <label for="password"><b>Contraseña</b></label>
+                            <label class="pt-3" for="password"><b>Contraseña</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="password" placeholder="Introduce tu contraseña"
                                 name="password" id="passwordRegister" required>
                         </div>
                         <div class=col>
-                            <label for="password"><b>Repetir Contraseña</b></label>
+                            <label class="pt-3" for="password"><b>Repetir Contraseña</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="password" placeholder="Repite tu contraseña"
                                 name="password" id="passwordRegisterRepit" required>
                         </div>
                         <div class=col>
-                            <label for="age"><b>Edad</b></label>
+                            <label class="pt-3" for="age"><b>Edad</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="text" placeholder="Introduce tu edad"
                                 name="age" id="ageRegister" required>
@@ -134,19 +134,19 @@
         <!-- END register -->
 
         <!-- delete user -->
-        <div class="row" id="deleteUserRow">
+        <div class="row deleteUserRow d-none">
             <div class="col d-flex justify-content-center" id="deleteUser">
                 <div class="cardLogin p-5">
                     <form id="deleteForm">
                         <span>Elimina tu usuario.</span>
                         <div class=col>
-                            <label for="email"><b>Email</b></label>
+                            <label class="pt-3" for="email"><b>Email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
                                 name="email" id="emailDelete" required>
                         </div>
                         <div class=col>
-                            <label for="email"><b>Repetir email</b></label>
+                            <label class="pt-3" for="email"><b>Repetir email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Repite tu email"
                                 name="email" id="emailDeleteRepit" required>
@@ -163,13 +163,13 @@
         <!-- END delete user -->
 
         <!-- reset password -->
-        <div class="row" id="resetPasswordRow">
+        <div class="row resetPasswordRow d-none">
             <div class="col d-flex justify-content-center" id="resetPassword">
                 <div class="cardLogin p-5">
                     <form id="resetPasswordForm">
                         <span>Recupera tu contraseña.</span>
-                        <div class=col>
-                            <label for="email"><b>Email</b></label>
+                        <div class="col">
+                            <label class="pt-3" for="email"><b>Email</b></label>
                             <div class="w-100"></div>
                             <input class="form-control loginForms" type="email" placeholder="Introduce tu email"
                                 name="email" id="emailResetPassword" required>
@@ -186,10 +186,11 @@
         <!-- END reset password -->
 
         <!-- list users -->
-        <div class="row" id="listUsersRow">
+        <div class="row listUsersRow d-none">
             <div class="col d-flex justify-content-center" id="listUsers">
                 <div class="cardLogin p-5">
                     <form id="listUsersForm">
+                        <span>Consulta la lista de usuarios.</span>
                         <div class="col d-flex justify-content-center mt-3">
                             <button class="btn btn-warning text-white buttonLogin" id="buttonListUsers" href=""
                                 role="button" type="submit">Listar usuarios</button>

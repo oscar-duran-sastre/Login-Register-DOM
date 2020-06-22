@@ -1,15 +1,17 @@
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: lightgrey;
     padding-top: 100px;
-    padding-bottom: 50px;    
+    padding-bottom: 50px;
+}
+
+button {
+    margin-top: 1rem;
 }
 
 .loginForms,
-.resultUsersList {
+.resultUsersList,
+#digitalClock {
     background-color: #fff;
 }
 
@@ -30,6 +32,7 @@ body {
 .resultLoginFalse,
 .resultLoginTrue,
 .resultUsersList,
+#digitalClock,
 button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -61,6 +64,13 @@ button {
 .resultLoginFalse, 
 .resultLoginTrue,
 .resultSumAges,
-.resultUsersList {
+.resultUsersList,
+#digitalClock {
     border-radius: 5px;
+}
+
+@media (min-width: 767px) {
+    body {
+        padding-top: 15%;
+    }
 }

@@ -1,33 +1,74 @@
 
-const header = document.querySelector('#header');
+const linkLogin = document.querySelector('.headerLinkLogin');
+const linkRegister = document.querySelector('.headerLinkRegister');
+const linkDeleteUser = document.querySelector('.headerLinkDeleteUser');
+const linkPasswordRecovery = document.querySelector('.headerLinkPasswordRecovery');
+const linkUserList = document.querySelector('.headerLinkUsersList');
 
-const headerEventListener = () => {
-  header.addEventListener('click', event => {
-    event.preventDefault();
-    console.log(event);
-    console.log('hola');
-    const linkLogin = document.querySelector('#headerLinkLogin');
-    const linkRegister = document.querySelector('#headerLinkRegister');
-    const linkDeleteUser = document.querySelector('#headerLinkDeleteUser');
-    const linkPasswordRecovery = document.querySelector('#headerLinkPasswordRecovery');
-    const linkUserList = document.querySelector('#headerLinkUsersList');
+const loginRow = document.querySelector('.loginRow');
+const registerRow = document.querySelector('.registerRow');
+const deleteUserRow = document.querySelector('.deleteUserRow');
+const resetPasswordRow = document.querySelector('.resetPasswordRow');
+const listUsersRow = document.querySelector('.listUsersRow');
 
-    const login = document.querySelector('#login');
-    const register = document.querySelector('#register');
-    const deleteUser = document.querySelector('#deleteUser');
-    const resetPassword = document.querySelector('#resetPassword');
-    const listUsers = document.querySelector('#listUsers');
-
-    const loginRow = document.querySelector('#loginRow');
-    const registerRow = document.querySelector('#registerRow');
-    const deleteUserRow = document.querySelector('#deleteUserRow');
-    const resetPasswordRow = document.querySelector('#resetPasswordRow');
-    const listUsersRow = document.querySelector('#listUsersRow');
-    // const checkEmailResult = checkEmail(userEmail.value);
-    // const checkPasswordResult = checkPassword(userPassword.value);
-    // return resultLogin(checkEmailResult, checkPasswordResult);
-
-  });
+const loginCard = () => {
+    linkLogin.addEventListener('click', event => {
+        event.preventDefault();
+        loginRow.classList.remove('d-none');
+        registerRow.classList.add('d-none');
+        deleteUserRow.classList.add('d-none');
+        resetPasswordRow.classList.add('d-none');
+        listUsersRow.classList.add('d-none');
+        return;
+    });
 }
 
-headerEventListener();
+const registerCard = () => {
+    linkRegister.addEventListener('click', event => {
+        event.preventDefault();
+        loginRow.classList.add('d-none');
+        registerRow.classList.remove('d-none');
+        deleteUserRow.classList.add('d-none');
+        resetPasswordRow.classList.add('d-none');
+        listUsersRow.classList.add('d-none');
+        return;
+    });
+}
+
+const deleteUserCard = () => {
+    linkDeleteUser.addEventListener('click', event => {
+        event.preventDefault();
+        loginRow.classList.add('d-none');
+        registerRow.classList.add('d-none');
+        deleteUserRow.classList.remove('d-none');
+        resetPasswordRow.classList.add('d-none');
+        listUsersRow.classList.add('d-none');
+        return;
+    });
+}
+
+const resetPasswordCard = () => {
+    linkPasswordRecovery.addEventListener('click', event => {
+        event.preventDefault();
+        loginRow.classList.add('d-none');
+        registerRow.classList.add('d-none');
+        deleteUserRow.classList.add('d-none');
+        resetPasswordRow.classList.remove('d-none');
+        listUsersRow.classList.add('d-none');
+        return;
+    });
+}
+
+const listUsersCard = () => {
+    linkUserList.addEventListener('click', event => {
+        event.preventDefault();
+        loginRow.classList.add('d-none');
+        registerRow.classList.add('d-none');
+        deleteUserRow.classList.add('d-none');
+        resetPasswordRow.classList.add('d-none');
+        listUsersRow.classList.remove('d-none');
+        return;
+    });
+}
+
+export { loginCard, registerCard, deleteUserCard, resetPasswordCard, listUsersCard };
